@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#f7f8fc" />
+  <title>Study Buddy — Make one topic click</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="#" aria-label="Study Buddy home"><span class="brand-mark">✳</span><span>study<span class="brand-light">buddy</span></span></a>
+    <div class="top-note"><span class="status-dot"></span> Your personal study space</div>
+    <button class="help-button" id="howButton" type="button">How it works <span aria-hidden="true">↗</span></button>
+  </header>
+  <main>
+    <section class="hero">
+      <div class="hero-copy">
+        <div class="eyebrow"><span>✦</span> SMALL STEPS. BIG AHA MOMENTS.</div>
+        <h1>One topic at a time.<br><span>You've got this.</span></h1>
+        <p>Bring the thing that’s been confusing you. We’ll make it clearer, then help you see what you know.</p>
+      </div>
+      <div class="hero-art" aria-hidden="true">
+        <div class="orbit orbit-one"></div><div class="orbit orbit-two"></div>
+        <div class="spark spark-a">✦</div><div class="spark spark-b">✳</div>
+        <div class="book"><div class="book-page page-left"><i></i><i></i><i></i></div><div class="book-page page-right"><b>aha!</b><i></i><i></i></div><div class="book-spine"></div></div>
+        <div class="art-pill pill-one">🌱 one idea</div><div class="art-pill pill-two">💡 one breakthrough</div>
+      </div>
+    </section>
+    <section class="workspace" aria-label="Study workspace">
+      <div class="input-card">
+        <div class="card-heading"><div class="step-number">01</div><div><h2>What are we learning?</h2><p>Pick one topic to focus on. You can add notes if you have them.</p></div></div>
+        <form id="studyForm">
+          <label for="topic">YOUR TOPIC</label>
+          <input id="topic" name="topic" maxlength="90" placeholder="e.g. Photosynthesis, fractions, the water cycle…" required />
+          <div class="example-row"><span>Try:</span><button type="button" class="example" data-topic="The water cycle">The water cycle</button><button type="button" class="example" data-topic="Fractions">Fractions</button><button type="button" class="example" data-topic="Photosynthesis">Photosynthesis</button></div>
+          <label for="notes" class="notes-label">YOUR NOTES <span>OPTIONAL</span></label>
+          <textarea id="notes" name="notes" rows="4" maxlength="2500" placeholder="Paste class notes, a textbook paragraph, or what you already know…"></textarea>
+          <div class="form-footer"><span class="privacy-note"><span aria-hidden="true">♧</span> Your notes stay in this browser.</span><button class="primary-button" type="submit">Make it make sense <span aria-hidden="true">→</span></button></div>
+        </form>
+      </div>
+      <aside class="side-card">
+        <div class="side-icon">✦</div><div class="side-kicker">A GENTLER WAY TO STUDY</div><h3>Curiosity first.<br>Pressure never.</h3>
+        <div class="side-list"><div><span class="list-icon">01</span><p><b>Get the gist</b><br>A friendly starting point</p></div><div><span class="list-icon">02</span><p><b>Try a quick quiz</b><br>See what’s sticking</p></div><div><span class="list-icon">03</span><p><b>Keep what works</b><br>Learn at your own pace</p></div></div>
+        <div class="side-foot">Built for the <b>STEM2Connect AI Hackathon</b></div>
+      </aside>
+    </section>
+    <section id="results" class="results" hidden aria-live="polite">
+      <div class="results-top"><div><div class="eyebrow"><span>✦</span> YOUR STUDY GUIDE</div><h2 id="resultTitle">Let’s make it click.</h2></div><button id="startOver" class="text-button" type="button">← Start a new topic</button></div>
+      <div class="result-grid"><article class="result-card explanation"><div class="result-label"><span class="label-icon">☼</span> THE BIG IDEA</div><div id="explanationBody"></div><div class="note-callout" id="noteCallout" hidden></div></article>
+        <article class="result-card quiz-card"><div class="result-label"><span class="label-icon quiz-icon">✎</span> QUICK CHECK <span class="tiny-tag">3 QUESTIONS</span></div><p class="quiz-intro">No pressure. Pick the answer that feels right.</p><div id="quizQuestions"></div><div class="quiz-actions"><span id="quizFeedback" class="quiz-feedback">Take your time ✨</span><button class="secondary-button" id="checkAnswers" type="button">Check my answers <span>→</span></button></div></article></div>
+      <div class="encouragement"><span>✦</span> Learning happens one small step at a time. Keep going!</div>
+      <p class="demo-note">Starter prototype: the guide is a study scaffold, not an AI-generated subject explanation. Notes stay in this browser.</p>
+    </section>
+    <section class="how-panel" id="howPanel" hidden><button class="close-how" id="closeHow" aria-label="Close" type="button">×</button><b>How this works</b><p>Choose one topic, add any class notes, and Study Buddy turns them into a simple study guide and three quick practice questions. This starter version works right in your browser; it doesn’t send your notes anywhere.</p></section>
+    <footer><span>✳ studybuddy</span><span>Made for curious minds · STEM2Connect 2026</span></footer>
+  </main>
+  <script src="app.js"></script>
+</body>
+</html>
+
